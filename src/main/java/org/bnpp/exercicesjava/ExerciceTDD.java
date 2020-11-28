@@ -25,6 +25,13 @@ public class ExerciceTDD {
         if(nombre.isEmpty()){
             return "0";
         }
+
+        if(nombre.startsWith("/")){
+            String delimiteur = nombre.substring(2,3);
+            nombre = nombre.substring(4);
+            nombre = nombre.replaceAll(delimiteur,",");
+        }
+
         if(nombre.endsWith(",")){
             throw (new Exception("Number expected but EOF found"));
         }
